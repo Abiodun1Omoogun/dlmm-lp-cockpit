@@ -1,0 +1,21 @@
+image:
+  file: .gitpod.Dockerfile
+
+tasks:
+  - name: Setup Env
+    init: |
+      rustup update stable
+      rustup default stable
+      export PATH="$HOME/.cargo/bin:$HOME/.local/share/solana/install/active_release/bin:$PATH"
+      solana --version
+      anchor --version
+      rustc --version
+      echo "✅ Environment ready: Solana + Anchor + Rust (latest)"
+
+vscode:
+  extensions:
+    - rust-lang.rust-analyzer
+    - tamasfe.even-better-toml
+    - serayuzgur.crates
+    - ms-vscode.makefile-tools
+
